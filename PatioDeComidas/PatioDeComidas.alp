@@ -237,6 +237,21 @@
 					</Properties>
 
 				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1694174450753</Id>
+					<Name><![CDATA[lasPersonas]]></Name>
+					<X>640</X><Y>1460</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[Persona]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
 			</Variables>
 			<Connectors>
 				<Connector>
@@ -2630,6 +2645,30 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[int]]></ReturnType>
+					<Id>1694174775122</Id>
+					<Name><![CDATA[personasEnMesa]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
+					<X>640</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[mesa]]></Name>
+						<Type><![CDATA[RectangularNode<?>]]></Type>
+					</Parameter>
+					<Body><![CDATA[int total = 0;
+for (Persona unaPersona : lasPersonas){
+if(unaPersona.getTable() != null){
+if(unaPersona.getTable() == mesa){total = total + 1;}
+} }
+return total;]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1692303567313</Id>
@@ -2836,6 +2875,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[lasPersonas.add(ped);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginGrouping]]></Name>
@@ -2905,6 +2947,9 @@
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[lasPersonas.remove(ped);]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3463,6 +3508,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[lasPersonas.add(ped);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginGrouping]]></Name>
@@ -3991,7 +4039,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(2, 3)]]></Code>
+								<Code><![CDATA[uniform(1, 3)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -4662,7 +4710,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(2.0, 4.0)]]></Code>
+								<Code><![CDATA[uniform(1.5, 4.0)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -5553,7 +5601,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.3, 1.2)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.2)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -5771,7 +5819,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.3, 1.3)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.2)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -5880,7 +5928,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.3, 1.3)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.2)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -6497,7 +6545,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.3, 1.3)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.5)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -7175,7 +7223,7 @@
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.3, 1.3)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.2)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -7552,6 +7600,9 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[capacity]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[4]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[targetReachTolerance]]></Name>
@@ -7559,7 +7610,7 @@
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.size() >= 3){tables.remove(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (self.agents().size() > 3 ){tables.remove(ped.getTable());}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7577,7 +7628,8 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!tables.contains(ped.myTable)){tables.add(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (!tables.contains(ped.getTable())){tables.add(ped.getTable());}
+ped.myTable = null;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7785,7 +7837,7 @@
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.size() >= 3){burgerTables.remove(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (self.agents().size() > 3){burgerTables.remove(ped.getTable());}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7803,7 +7855,8 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!burgerTables.contains(ped.myTable)){tables.add(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (!burgerTables.contains(ped.getTable())){tables.add(ped.getTable());}
+ped.myTable = null;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8053,7 +8106,7 @@
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.size() >= 3){greenEatTables.remove(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (self.agents().size() > 3){greenEatTables.remove(ped.getTable());}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8071,7 +8124,8 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!greenEatTables.contains(ped.myTable)){tables.add(ped.myTable);}]]></Code>
+								<Code><![CDATA[if (!greenEatTables.contains(ped.getTable())){tables.add(ped.getTable());}
+ped.myTable = null;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -67190,6 +67244,18 @@
 					</Parameter>
 					<Body><![CDATA[this.myTable = tables.get(uniform_discr(0, tables.size() - 1));
 return myTable;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[RectangularNode<?>]]></ReturnType>
+					<Id>1694176762821</Id>
+					<Name><![CDATA[getTable]]></Name>
+					<X>50</X><Y>210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return myTable;]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
