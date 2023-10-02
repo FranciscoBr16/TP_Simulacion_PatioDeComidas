@@ -108,6 +108,90 @@
 			<CurrentLevel>1692303567319</CurrentLevel>
 			<ConnectionsId>1692303567313</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1696278583188</Id>
+					<Name><![CDATA[PersonasComiendo]]></Name>
+					<X>1060</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696278624515</Id>
+					<Name><![CDATA[MesasOcupadas]]></Name>
+					<X>1310</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696278638009</Id>
+					<Name><![CDATA[MesasDisponibles]]></Name>
+					<X>1310</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[92]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696278745060</Id>
+					<Name><![CDATA[TotalPersonas]]></Name>
+					<X>1310</X><Y>490</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696282591257</Id>
+					<Name><![CDATA[probabilidad_mc]]></Name>
+					<X>1060</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0.18]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696284922270</Id>
+					<Name><![CDATA[cantidadDeGenteEsperando]]></Name>
+					<X>1060</X><Y>390</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1695213406989</Id>
 					<Name><![CDATA[tiempoPromedioRetirarPedidos]]></Name>
@@ -154,34 +238,10 @@
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
-				<Variable Class="Parameter">
-					<Id>1695213798498</Id>
-					<Name><![CDATA[cantidadDeGenteEsperando]]></Name>
-					<X>880</X><Y>1420</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[int]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1695213798496</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
 				<Variable Class="CollectionVariable">
 					<Id>1693515892989</Id>
-					<Name><![CDATA[tables]]></Name>
-					<X>640</X><Y>1330</Y>
+					<Name><![CDATA[Mesas]]></Name>
+					<X>1310</X><Y>580</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -235,22 +295,7 @@
 				<Variable Class="CollectionVariable">
 					<Id>1694174450753</Id>
 					<Name><![CDATA[cantPersonasComiendo]]></Name>
-					<X>640</X><Y>1460</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Persona]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1695214126334</Id>
-					<Name><![CDATA[totalPersonas]]></Name>
-					<X>640</X><Y>1500</Y>
+					<X>1060</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -267,7 +312,7 @@
 				<Connector>
 					<Id>1692303950837</Id>
 					<Name><![CDATA[connector1]]></Name>
-					<X>-70.994</X><Y>690.54</Y>
+					<X>-160.994</X><Y>690.54</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -294,7 +339,7 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-80</X><Y>0</Y></Point>
+						<Point><X>-130</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1377,7 +1422,7 @@
 				<Connector>
 					<Id>1693355822492</Id>
 					<Name><![CDATA[connector65]]></Name>
-					<X>-70</X><Y>690</Y>
+					<X>-160</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1404,15 +1449,14 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>0</Y></Point>
-						<Point><X>-30</X><Y>50</Y></Point>
-						<Point><X>-80</X><Y>50</Y></Point>
+						<Point><X>-50</X><Y>10</Y></Point>
+						<Point><X>-140</X><Y>30</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1693355892905</Id>
 					<Name><![CDATA[connector66]]></Name>
-					<X>55</X><Y>725</Y>
+					<X>30</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1439,15 +1483,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-15</X><Y>0</Y></Point>
-						<Point><X>-15</X><Y>-15</Y></Point>
-						<Point><X>-30</X><Y>-15</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>-40</Y></Point>
+						<Point><X>-80</X><Y>-40</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1693355914253</Id>
 					<Name><![CDATA[connector67]]></Name>
-					<X>95</X><Y>725</Y>
+					<X>70</X><Y>750</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1474,8 +1518,8 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>15</X><Y>-5</Y></Point>
-						<Point><X>15</X><Y>-35</Y></Point>
+						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>40</X><Y>-60</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -1988,8 +2032,8 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>310</Y></Point>
-						<Point><X>-1120</X><Y>310</Y></Point>
-						<Point><X>-1125</X><Y>-160</Y></Point>
+						<Point><X>-1210</X><Y>300</Y></Point>
+						<Point><X>-1200</X><Y>-160</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2233,7 +2277,7 @@
 				<Connector>
 					<Id>1695215107233</Id>
 					<Name><![CDATA[connector70]]></Name>
-					<X>-60</X><Y>690</Y>
+					<X>-150</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2260,7 +2304,7 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>65</X><Y>0</Y></Point>
+						<Point><X>80</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2333,7 +2377,7 @@
 				<Connector>
 					<Id>1695215709907</Id>
 					<Name><![CDATA[connector]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>-50</X><Y>690</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2359,8 +2403,8 @@
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
-						<Point><X>25</X><Y>690</Y></Point>
-						<Point><X>110</X><Y>690</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>160</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -3149,39 +3193,6 @@
 					</Points>
 				</Connector>
 			</Connectors>
-			<AnalysisData>
-    			<HistogramData>
-					<Id>1695221211531</Id>
-					<Name><![CDATA[data]]></Name>
-					<X>1100</X><Y>530</Y>
-					<Label><X>15</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<AutoUpdate>true</AutoUpdate>
-					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1695283200000</OccurrenceDate>
-					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</OccurrenceTime>
-					<RecurrenceCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
-						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
-					</RecurrenceCode>
-					<Value><![CDATA[]]></Value>
-					<NumberOfIntervals>10</NumberOfIntervals>
-					<MinMaxAutodetect>true</MinMaxAutodetect>
-					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
-					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
-					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
-					<CalculateCDF>true</CalculateCDF>
-					<CalculatePercentiles>false</CalculatePercentiles>
-					<LowPercent>10</LowPercent>
-					<HighPercent>10</HighPercent>
-					<Title><![CDATA[]]></Title>
-				</HistogramData>
-			</AnalysisData>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1692303567313</Id>
@@ -3208,7 +3219,7 @@
 				<EmbeddedObject>
 					<Id>1692303915264</Id>
 					<Name><![CDATA[entrada1]]></Name>
-					<X>-180</X><Y>690</Y>
+					<X>-320</X><Y>630</Y>
 					<Label><X>-15</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3389,8 +3400,7 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[cantPersonasComiendo.add(ped);
-totalPersonas.add(ped);]]></Code>
+								<Code><![CDATA[TotalPersonas += 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3748,6 +3758,9 @@ totalPersonas.add(ped);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[parameterMC == true;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition2]]></Name>
@@ -3761,7 +3774,7 @@ totalPersonas.add(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[probability1]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[0.18]]></Code>
+								<Code><![CDATA[probabilidad_mc]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3852,7 +3865,7 @@ totalPersonas.add(ped);]]></Code>
 				<EmbeddedObject>
 					<Id>1692303963071</Id>
 					<Name><![CDATA[entrada2]]></Name>
-					<X>-180</X><Y>740</Y>
+					<X>-330</X><Y>720</Y>
 					<Label><X>-15</X><Y>-30</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4023,8 +4036,7 @@ totalPersonas.add(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[cantPersonasComiendo.add(ped);
-totalPersonas.add(ped);]]></Code>
+								<Code><![CDATA[TotalPersonas++;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4128,6 +4140,9 @@ totalPersonas.add(ped);]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[TotalPersonas++;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
@@ -7869,7 +7884,7 @@ totalPersonas.add(ped);]]></Code>
 				<EmbeddedObject>
 					<Id>1693355821550</Id>
 					<Name><![CDATA[$]]></Name>
-					<X>-5</X><Y>690</Y>
+					<X>-80</X><Y>690</Y>
 					<Label><X>13</X><Y>-24</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7995,7 +8010,7 @@ totalPersonas.add(ped);]]></Code>
 				<EmbeddedObject>
 					<Id>1693355891940</Id>
 					<Name><![CDATA[pedCajero]]></Name>
-					<X>55</X><Y>715</Y>
+					<X>30</X><Y>740</Y>
 					<Label><X>-11</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8127,7 +8142,7 @@ totalPersonas.add(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[locationNode]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.choiceTable(tables);]]></Code>
+								<Code><![CDATA[ped.choiceTable(Mesas);]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8182,9 +8197,13 @@ totalPersonas.add(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (ped.myTable.agents().size() > 1 ){tables.remove(ped.getTable());}
+								<Code><![CDATA[if (ped.myTable.agents().size() > 3 )
+	{Mesas.remove(ped.getTable());
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;}
 ped.sit=true;
-cantPersonasComiendo.add(ped);]]></Code>
+cantPersonasComiendo.add(ped);
+PersonasComiendo++;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8197,8 +8216,13 @@ cantPersonasComiendo.add(ped);]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!tables.contains(ped.getTable())){tables.add(ped.getTable());}
-ped.myTable = null;]]></Code>
+								<Code><![CDATA[if (!Mesas.contains(ped.getTable()))
+	{Mesas.add(ped.getTable());
+	MesasDisponibles += 1;
+	MesasOcupadas -= 1;}
+ped.myTable = null;
+cantPersonasComiendo.remove(ped);
+PersonasComiendo--;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8406,13 +8430,18 @@ ped.myTable = null;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.agents().size() > 3){burgerTables.remove(ped.getTable());}]]></Code>
+								<Code><![CDATA[if (self.agents().size() > 3)
+{burgerTables.remove(ped.getTable());
+MesasDisponibles--;
+MesasOcupadas++;}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.sit=true;]]></Code>
+								<Code><![CDATA[ped.sit=true;
+cantPersonasComiendo.add(ped);
+PersonasComiendo += 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8424,8 +8453,12 @@ ped.myTable = null;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!burgerTables.contains(ped.getTable())){tables.add(ped.getTable());}
-ped.myTable = null;]]></Code>
+								<Code><![CDATA[if (!burgerTables.contains(ped.getTable())){Mesas.add(ped.getTable());}
+ped.myTable = null;
+cantPersonasComiendo.remove(ped);
+PersonasComiendo -= 1;
+MesasDisponibles++;
+MesasOcupadas--;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8675,13 +8708,18 @@ ped.myTable = null;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.agents().size() > 3){greenEatTables.remove(ped.getTable());}]]></Code>
+								<Code><![CDATA[if (self.agents().size() > 3){
+greenEatTables.remove(ped.getTable());
+MesasDisponibles--;
+MesasOcupadas++;}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[ped.sit=true;]]></Code>
+								<Code><![CDATA[ped.sit=true;
+cantPersonasComiendo.add(ped);
+PersonasComiendo += 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8693,8 +8731,12 @@ ped.myTable = null;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!greenEatTables.contains(ped.getTable())){tables.add(ped.getTable());}
-ped.myTable = null;]]></Code>
+								<Code><![CDATA[if (!greenEatTables.contains(ped.getTable())){Mesas.add(ped.getTable());}
+ped.myTable = null;
+cantPersonasComiendo.remove(ped);
+PersonasComiendo -= 1;
+MesasDisponibles++;
+MesasOcupadas--;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -9093,6 +9135,9 @@ ped.myTable = null;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[TotalPersonas++;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
@@ -9386,7 +9431,7 @@ ped.myTable = null;]]></Code>
 				<EmbeddedObject>
 					<Id>1695214787729</Id>
 					<Name><![CDATA[tiempoEnSistema]]></Name>
-					<X>-70</X><Y>670</Y>
+					<X>-160</X><Y>670</Y>
 					<Label><X>-45</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -68859,27 +68904,28 @@ ped.myTable = null;]]></Code>
 						<Title><![CDATA[Espera Club de la Milanesa]]></Title>							
 					</HistogramDataExpression>
     			</Histogram>
-				<Text>
-					<Id>1696277383476</Id>
-					<Name><![CDATA[text]]></Name>
-					<X>760</X><Y>490</Y>
+				<Control Type="Button">
+				 	<EmbeddedIcon>false</EmbeddedIcon>				
+					<Id>1696280973232</Id>
+					<Name><![CDATA[desactivar_mc]]></Name>
+					<X>1050</X><Y>70</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D</DrawMode>
-					<EmbeddedIcon>false</EmbeddedIcon>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>
-					<Color>-16777216</Color>
-					<Text><![CDATA["Cantidad de personas comiendo: " + cantPersonasComienzo.size();]]></Text>
-					<Font>
-						<Name>SansSerif</Name>
-						<Size>10</Size>
-						<Style>0</Style>
-					</Font>
-					<Alignment>LEFT</Alignment>
-				</Text>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<BasicProperties Width="180" Height="30">
+                        <EmbeddedIcon>false</EmbeddedIcon>	
+						<TextColor>-16777216</TextColor>
+						<Enabled>true</Enabled>
+						<EnableExpression><![CDATA[probabilidad_mc==0.18]]></EnableExpression>
+						<ActionCode><![CDATA[probabilidad_mc=0;]]></ActionCode>
+					</BasicProperties>
+					<ExtendedProperties>
+						<Font Name="Dialog" Size="12" Style="1"/>
+						<LabelText><![CDATA[Desactivar McDonalds]]></LabelText>
+					</ExtendedProperties>
+				</Control>
 			</Presentation>
 
 				</Level>
@@ -69781,9 +69827,6 @@ return myTable;]]></Body>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[tiempoPromedioEnSistema]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[cantidadDeGenteEsperando]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
