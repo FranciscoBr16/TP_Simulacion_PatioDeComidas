@@ -195,6 +195,18 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1696885275603</Id>
+					<Name><![CDATA[cp]]></Name>
+					<X>1060</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1695213406989</Id>
 					<Name><![CDATA[tiempoPromedioRetirarPedidos]]></Name>
@@ -2035,7 +2047,7 @@
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>310</Y></Point>
-						<Point><X>-1210</X><Y>300</Y></Point>
+						<Point><X>-1200</X><Y>300</Y></Point>
 						<Point><X>-1200</X><Y>-160</Y></Point>
 					</Points>
 				</Connector>
@@ -3388,7 +3400,7 @@
 						<Parameter>
 							<Name><![CDATA[serviceGroupBehavior]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[self.SGB_ONE_MEMBER_IS_SERVED_OTHERS_WAIT_IN_QUEUE]]></Code>
+								<Code><![CDATA[self.SGB_ONE_MEMBER_IS_SERVED_OTHERS_WAIT_IN_AREA]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4017,15 +4029,25 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[groupSize]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[uniform_discr(1, 4)]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[groupMemberInterarrivalTime]]></Name>
+							<Value Class="CodeUnitValue">
+								<Code><![CDATA[exponential(3)]]></Code>
+								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[groupFormation]]></Name>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[serviceGroupBehavior]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.SGB_ONE_MEMBER_IS_SERVED_OTHERS_WAIT_IN_AREA]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[solidCancelling]]></Name>
@@ -8201,9 +8223,7 @@
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (ped.myTable.agents().size() > 3 )
-	{Mesas.remove(ped.getTable());
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;}
+	{Mesas.remove(ped.getTable());}
 ped.sit=true;
 cantPersonasComiendo.add(ped);
 PersonasComiendo++;]]></Code>
@@ -8220,9 +8240,7 @@ PersonasComiendo++;]]></Code>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (!Mesas.contains(ped.getTable()))
-	{Mesas.add(ped.getTable());
-	MesasDisponibles += 1;
-	MesasOcupadas -= 1;}
+	{Mesas.add(ped.getTable());}
 ped.myTable = null;
 cantPersonasComiendo.remove(ped);
 PersonasComiendo--;]]></Code>
@@ -8434,9 +8452,7 @@ PersonasComiendo--;]]></Code>
 							<Name><![CDATA[onEnter]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (self.agents().size() > 3)
-{burgerTables.remove(ped.getTable());
-MesasDisponibles--;
-MesasOcupadas++;}]]></Code>
+{burgerTables.remove(ped.getTable());}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8459,9 +8475,7 @@ PersonasComiendo += 1;]]></Code>
 								<Code><![CDATA[if (!burgerTables.contains(ped.getTable())){Mesas.add(ped.getTable());}
 ped.myTable = null;
 cantPersonasComiendo.remove(ped);
-PersonasComiendo -= 1;
-MesasDisponibles++;
-MesasOcupadas--;]]></Code>
+PersonasComiendo -= 1;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8713,8 +8727,7 @@ MesasOcupadas--;]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if (self.agents().size() > 3){
 greenEatTables.remove(ped.getTable());
-MesasDisponibles--;
-MesasOcupadas++;}]]></Code>
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8738,8 +8751,7 @@ PersonasComiendo += 1;]]></Code>
 ped.myTable = null;
 cantPersonasComiendo.remove(ped);
 PersonasComiendo -= 1;
-MesasDisponibles++;
-MesasOcupadas--;]]></Code>
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -11340,7 +11352,7 @@ MesasOcupadas--;]]></Code>
 					<ServiceColor>-16744448</ServiceColor>
 					<Id>1692305168203</Id>
 					<Name><![CDATA[filaHelado]]></Name>
-					<X>287.416</X><Y>271.525</Y>
+					<X>286.416</X><Y>270.525</Y>
 					<Label><X>44.5</X><Y>-36.987</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11439,7 +11451,7 @@ MesasOcupadas--;]]></Code>
 				<QueueLine>
 					<Id>1692305168205</Id>
 					<Name><![CDATA[queueLine4]]></Name>
-					<X>428.317</X><Y>296.951</Y>
+					<X>339</X><Y>278</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -11452,13 +11464,16 @@ MesasOcupadas--;]]></Code>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>-35.96</X><Y>0</Y></Point>
-						<Point><X>-26.485</X><Y>0</Y></Point>
-						<Point><X>-49.792</X><Y>0</Y></Point>
-						<Point><X>-23.307</X><Y>0</Y></Point>
-						<Point><X>-49.792</X><Y>-26.485</Y></Point>
-						<Point><X>-49.792</X><Y>-25.426</Y></Point>
-						<Point><X>-49.792</X><Y>1.059</Y></Point>
-						<Point><X>-136.097</X><Y>-25.426</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>-25</Y></Point>
+						<Point><X>25</X><Y>-9</Y></Point>
+						<Point><X>25</X><Y>16</Y></Point>
+						<Point><X>50</X><Y>-9</Y></Point>
+						<Point><X>35</X><Y>-9</Y></Point>
+						<Point><X>10.000000000000007</X><Y>-9</Y></Point>
+						<Point><X>-51.30500000000001</X><Y>-9</Y></Point>
 					</Points>
 					<ExceededQueuePolicy>EXTEND_QUEUE_TO_THE_FREE_SPACE</ExceededQueuePolicy>
 				</QueueLine>
@@ -56601,6 +56616,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -56614,10 +56632,10 @@ MesasOcupadas--;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56627,7 +56645,8 @@ MesasOcupadas--;]]></Code>
 								<Name><![CDATA[onExit]]></Name>
 								<Value Class="CodeValue">
 									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;]]></Code>
+MesasOcupadas -= 1;
+Mesas.add(self);]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56857,6 +56876,9 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -56870,10 +56892,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56882,8 +56904,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;]]></Code>
+									<Code><![CDATA[if (!Mesas.contains(self)){
+MesasDisponibles += 1;
+MesasOcupadas -= 1;
+Mesas.add(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -57113,6 +57137,9 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57125,12 +57152,24 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (!Mesas.contains(self)){
+MesasDisponibles += 1;
+MesasOcupadas -= 1;
+Mesas.add(self);}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57359,6 +57398,9 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57372,10 +57414,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -57384,8 +57426,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;]]></Code>
+									<Code><![CDATA[if (!Mesas.contains(self)){
+MesasDisponibles += 1;
+MesasOcupadas -= 1;
+Mesas.add(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -57559,6 +57603,9 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57571,12 +57618,26 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}
+]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (self.agents().size()<1){
+Mesas.add(self);
+MesasDisponibles += 1;
+MesasOcupadas -= 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57805,6 +57866,9 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57818,10 +57882,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
+									<Code><![CDATA[if (self.agents().size() == 1){
+MesasDisponibles -= 1;
+MesasOcupadas += 1;
+Mesas.remove(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -57830,8 +57894,10 @@ MesasOcupadas -= 1;]]></Code>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;]]></Code>
+									<Code><![CDATA[if (self.agents().size()<1){
+MesasDisponibles += 1;
+MesasOcupadas -= 1;
+Mesas.add(self);}]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -58073,22 +58139,12 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasOcupadas -= 1;
-MesasDisponibles += 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58273,22 +58329,12 @@ MesasDisponibles += 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58529,22 +58575,12 @@ MesasOcupadas -= 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasOcupadas -= 1;
-MesasDisponibles += 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58785,22 +58821,12 @@ MesasDisponibles += 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasOcupadas -= 1;
-MesasDisponibles += 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -59041,22 +59067,12 @@ MesasDisponibles += 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasOcupadas -= 1;
-MesasDisponibles += 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -59297,22 +59313,12 @@ MesasDisponibles += 1;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (getCapacity == 0){
-	MesasDisponibles -= 1;
-	MesasOcupadas += 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasOcupadas -= 1;
-MesasDisponibles += 1;]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -60215,17 +60221,29 @@ MesasDisponibles += 1;]]></Code>
 									<IsAgentEntity>false</IsAgentEntity>
 									<EntityEmbeddedObject>
 										<ActiveObjectClass>
-											<PackageName><![CDATA[airport]]></PackageName>
-											<ClassName><![CDATA[Main]]></ClassName>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
 										</ActiveObjectClass>
 										<GenericParameterSubstitute>
 											<GenericParameterSubstituteReference>
-												<PackageName><![CDATA[airport]]></PackageName>
-												<ClassName><![CDATA[Main]]></ClassName>
-												<ItemName><![CDATA[1689112364482]]></ItemName>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[appearanceType]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[tiempoRetirarPedido]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[tiempoEnSistema]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[parameter]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -71017,12 +71035,6 @@ return myTable;]]></Body>
 		<VersionMajor>8</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionBuild>5</VersionBuild>
-    </RequiredLibraryReference>
-    <RequiredLibraryReference>
-		<LibraryName><![CDATA[airport]]></LibraryName>
-		<VersionMajor>0</VersionMajor>
-		<VersionMinor>0</VersionMinor>
-		<VersionBuild>0</VersionBuild>
     </RequiredLibraryReference>
 </Model>
 </AnyLogicWorkspace>
