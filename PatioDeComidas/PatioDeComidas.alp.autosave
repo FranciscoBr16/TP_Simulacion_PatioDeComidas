@@ -130,6 +130,9 @@
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
 						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
@@ -56521,6 +56524,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -56530,6 +56589,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56551,12 +56613,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56708,6 +56780,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -56717,6 +56845,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56738,12 +56869,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56895,6 +57036,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -56904,6 +57101,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56925,12 +57125,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57082,6 +57292,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -57091,6 +57357,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57112,12 +57381,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57278,6 +57557,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57299,12 +57581,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57456,6 +57748,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -57465,6 +57813,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57486,12 +57837,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57643,6 +58004,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -57652,6 +58069,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57673,12 +58093,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasOcupadas -= 1;
+MesasDisponibles += 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57839,6 +58269,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57860,12 +58293,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasDisponibles += 1;
+MesasOcupadas -= 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58017,6 +58460,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58026,6 +58525,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58047,12 +58549,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasOcupadas -= 1;
+MesasDisponibles += 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58204,6 +58716,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58213,6 +58781,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58234,12 +58805,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasOcupadas -= 1;
+MesasDisponibles += 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58391,6 +58972,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58400,6 +59037,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58421,12 +59061,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasOcupadas -= 1;
+MesasDisponibles += 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58578,6 +59228,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58587,6 +59293,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58608,12 +59317,22 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[if (this.getCapacity == 0){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[MesasOcupadas -= 1;
+MesasDisponibles += 1;]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58765,6 +59484,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58774,6 +59549,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58783,6 +59561,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -58952,6 +59733,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -58961,6 +59798,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -58970,6 +59810,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -59139,6 +59982,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -59148,6 +60047,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -59157,6 +60059,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -59326,6 +60231,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[airport]]></PackageName>
+											<ClassName><![CDATA[Main]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[airport]]></PackageName>
+												<ClassName><![CDATA[Main]]></ClassName>
+												<ItemName><![CDATA[1689112364482]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -59335,6 +60296,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -59344,6 +60308,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -63440,6 +64407,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -63449,6 +64472,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -63458,6 +64484,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -63627,6 +64656,62 @@ MesasOcupadas--;]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -63636,6 +64721,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -63645,6 +64733,9 @@ MesasOcupadas--;]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[4]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -69946,6 +71037,12 @@ return myTable;]]></Body>
 		<VersionMajor>8</VersionMajor>
 		<VersionMinor>0</VersionMinor>
 		<VersionBuild>5</VersionBuild>
+    </RequiredLibraryReference>
+    <RequiredLibraryReference>
+		<LibraryName><![CDATA[airport]]></LibraryName>
+		<VersionMajor>0</VersionMajor>
+		<VersionMinor>0</VersionMinor>
+		<VersionBuild>0</VersionBuild>
     </RequiredLibraryReference>
 </Model>
 </AnyLogicWorkspace>
