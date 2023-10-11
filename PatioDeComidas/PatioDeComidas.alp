@@ -195,18 +195,6 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1696885275603</Id>
-					<Name><![CDATA[cp]]></Name>
-					<X>1060</X><Y>280</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-					</Properties>
-				</Variable>
 				<Variable Class="Parameter">
 					<Id>1695213406989</Id>
 					<Name><![CDATA[tiempoPromedioRetirarPedidos]]></Name>
@@ -256,7 +244,7 @@
 				<Variable Class="CollectionVariable">
 					<Id>1693515892989</Id>
 					<Name><![CDATA[Mesas]]></Name>
-					<X>1310</X><Y>580</Y>
+					<X>1310</X><Y>550</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -318,6 +306,21 @@
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
 						<ElementClass><![CDATA[Persona]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+				<Variable Class="CollectionVariable">
+					<Id>1696887444811</Id>
+					<Name><![CDATA[MesasOcupadasCol]]></Name>
+					<X>1310</X><Y>610</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[LinkedList]]></CollectionClass>
+						<ElementClass><![CDATA[RectangularNode<?>]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -8222,11 +8225,16 @@
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (ped.myTable.agents().size() > 3 )
-	{Mesas.remove(ped.getTable());}
+								<Code><![CDATA[if (ped.getTable().agents().size() == 1 ){
+	Mesas.remove(ped.getTable());
+	MesasOcupadasCol.add(ped.getTable());
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+}
 ped.sit=true;
 cantPersonasComiendo.add(ped);
-PersonasComiendo++;]]></Code>
+PersonasComiendo++;
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -8239,8 +8247,12 @@ PersonasComiendo++;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!Mesas.contains(ped.getTable()))
-	{Mesas.add(ped.getTable());}
+								<Code><![CDATA[if (ped.getTable().agents().size() < 1){
+	Mesas.add(ped.getTable());
+	MesasOcupadasCol.remove(ped.getTable());
+	MesasDisponibles += 1;
+	MesasOcupadas -= 1;
+	}
 ped.myTable = null;
 cantPersonasComiendo.remove(ped);
 PersonasComiendo--;]]></Code>
@@ -8450,10 +8462,6 @@ PersonasComiendo--;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.agents().size() > 3)
-{burgerTables.remove(ped.getTable());}]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
@@ -8472,9 +8480,7 @@ PersonasComiendo += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!burgerTables.contains(ped.getTable())){Mesas.add(ped.getTable());}
-ped.myTable = null;
-cantPersonasComiendo.remove(ped);
+								<Code><![CDATA[cantPersonasComiendo.remove(ped);
 PersonasComiendo -= 1;]]></Code>
 							</Value>
 						</Parameter>
@@ -8724,11 +8730,6 @@ PersonasComiendo -= 1;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[if (self.agents().size() > 3){
-greenEatTables.remove(ped.getTable());
-}]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
@@ -8747,9 +8748,7 @@ PersonasComiendo += 1;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (!greenEatTables.contains(ped.getTable())){Mesas.add(ped.getTable());}
-ped.myTable = null;
-cantPersonasComiendo.remove(ped);
+								<Code><![CDATA[cantPersonasComiendo.remove(ped);
 PersonasComiendo -= 1;
 ]]></Code>
 							</Value>
@@ -56616,9 +56615,6 @@ PersonasComiendo -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -56631,23 +56627,12 @@ PersonasComiendo -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[MesasDisponibles += 1;
-MesasOcupadas -= 1;
-Mesas.add(self);]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56876,9 +56861,6 @@ Mesas.add(self);]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -56891,24 +56873,12 @@ Mesas.add(self);]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (!Mesas.contains(self)){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-Mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57137,9 +57107,6 @@ Mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57152,24 +57119,12 @@ Mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (!Mesas.contains(self)){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-Mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57398,9 +57353,6 @@ Mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57413,24 +57365,12 @@ Mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (!Mesas.contains(self)){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-Mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57582,6 +57522,62 @@ Mesas.add(self);}]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
@@ -57618,26 +57614,12 @@ Mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}
-]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size()<1){
-Mesas.add(self);
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57866,9 +57848,6 @@ MesasOcupadas -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57881,24 +57860,12 @@ MesasOcupadas -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-Mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size()<1){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-Mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -58296,6 +58263,62 @@ Mesas.add(self);}]]></Code>
 						<Parameters>
 							<Parameter>
 								<Name><![CDATA[appliedClass]]></Name>
+								<Value Class="EntityCodeValue">
+									<IsAgentEntity>false</IsAgentEntity>
+									<EntityEmbeddedObject>
+										<ActiveObjectClass>
+											<PackageName><![CDATA[patiodecomidas]]></PackageName>
+											<ClassName><![CDATA[Persona]]></ClassName>
+										</ActiveObjectClass>
+										<GenericParameterSubstitute>
+											<GenericParameterSubstituteReference>
+												<PackageName><![CDATA[patiodecomidas]]></PackageName>
+												<ClassName><![CDATA[Persona]]></ClassName>
+												<ItemName><![CDATA[1692304827354]]></ItemName>
+											</GenericParameterSubstituteReference>
+										</GenericParameterSubstitute>
+										<Parameters>
+										</Parameters>
+										<ReplicationFlag>true</ReplicationFlag>
+										<Replication Class="CodeValue">
+											<Code><![CDATA[100]]></Code>
+										</Replication>
+										<CollectionType>ARRAY_LIST_BASED</CollectionType>
+										<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+										<XCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</XCode>
+										<YCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</YCode>
+										<ZCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ZCode>
+										<ColumnCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</ColumnCode>
+										<RowCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</RowCode>
+										<LatitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LatitudeCode>
+										<LongitudeCode Class="CodeValue">
+											<Code><![CDATA[0]]></Code>
+										</LongitudeCode>
+										<LocationNameCode Class="CodeValue">
+											<Code><![CDATA[""]]></Code>
+										</LocationNameCode>
+										<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+										<InitializationDatabaseTableQuery>
+											<TableReference>
+											</TableReference>
+										</InitializationDatabaseTableQuery>
+										<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+										<QuantityColumn>
+										</QuantityColumn>
+									</EntityEmbeddedObject>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[speedRestricted]]></Name>
