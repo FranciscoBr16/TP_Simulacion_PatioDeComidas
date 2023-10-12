@@ -7593,15 +7593,19 @@ else {ped.myTable = mesas93;}]]></Code>
 						<Parameter>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[mesa45 = mesas45.agents().size();
-mesa46 = mesas46.agents().size();
-ped.sit=true;
+								<Code><![CDATA[ped.sit=true;
 cantPersonasComiendo.add(ped);
 PersonasComiendo += 1;
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-mesas.remove(ped.getTable());
-mesasOcupadasCol.add(ped.getTable());]]></Code>
+if (mesas45.agents().size() == 2){
+mesa45 = mesas45.agents().size();
+}
+mesa46 = mesas46.agents().size();
+if (ped.getTable().agents().size() == 2){
+	MesasDisponibles -= 1;
+	MesasOcupadas += 1;
+	mesas.remove(ped.getTable());
+	mesasOcupadasCol.add(ped.getTable());
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -48048,6 +48052,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48057,6 +48064,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -48235,6 +48245,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48244,6 +48257,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -48422,6 +48438,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48431,6 +48450,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -48609,6 +48631,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48618,6 +48643,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -48796,6 +48824,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48805,6 +48836,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -48983,6 +49017,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -48992,6 +49029,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -49170,6 +49210,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -49179,6 +49222,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -49357,6 +49403,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -49366,6 +49415,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -49544,6 +49596,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -49553,6 +49608,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -49731,6 +49789,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -49740,6 +49801,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -49918,6 +49982,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -49927,6 +49994,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -50105,6 +50175,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -50114,6 +50187,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -50292,6 +50368,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -50301,6 +50380,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -50479,6 +50561,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -50488,6 +50573,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -50666,6 +50754,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -50675,6 +50766,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -50853,6 +50947,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -50862,6 +50959,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51040,6 +51140,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51049,6 +51152,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51227,6 +51333,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51236,6 +51345,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51414,6 +51526,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51423,6 +51538,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51601,6 +51719,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51610,6 +51731,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51788,6 +51912,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51797,6 +51924,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -51975,6 +52105,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -51984,6 +52117,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -52162,6 +52298,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -52171,6 +52310,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -52349,6 +52491,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -52358,6 +52503,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -52536,6 +52684,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -52545,6 +52696,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -52723,6 +52877,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -52732,6 +52889,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -52910,6 +53070,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -52919,6 +53082,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -53097,6 +53263,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -53106,6 +53275,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -53284,6 +53456,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -53293,6 +53468,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -53471,6 +53649,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -53480,6 +53661,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -53658,6 +53842,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -53667,6 +53854,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -53845,6 +54035,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -53854,6 +54047,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -54032,6 +54228,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -54041,6 +54240,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -54219,6 +54421,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -54228,6 +54433,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -54406,6 +54614,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -54415,6 +54626,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -54593,6 +54807,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -54602,6 +54819,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -54780,6 +55000,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -54789,6 +55012,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -55023,6 +55249,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -55032,6 +55261,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -55210,6 +55442,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -55219,6 +55454,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -55397,6 +55635,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -55406,6 +55647,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -55640,6 +55884,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -55650,7 +55897,7 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -55886,6 +56133,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -55896,7 +56146,7 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56132,6 +56382,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56142,7 +56395,7 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56156,24 +56409,12 @@ else {ped.myTable = mesas93;}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (!mesas.contains(self)){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56390,6 +56631,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56400,7 +56644,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56414,24 +56658,12 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (!mesas.contains(self)){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56648,6 +56880,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56658,7 +56893,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56672,26 +56907,12 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-mesas.remove(self);}
-]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size()<1){
-mesas.add(self);
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -56908,6 +57129,9 @@ MesasOcupadas -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -56918,7 +57142,7 @@ MesasOcupadas -= 1;
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -56932,24 +57156,12 @@ MesasOcupadas -= 1;
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnter]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size() == 1){
-MesasDisponibles -= 1;
-MesasOcupadas += 1;
-mesas.remove(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onEnterDenied]]></Name>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onExit]]></Name>
-								<Value Class="CodeValue">
-									<Code><![CDATA[if (self.agents().size()<1){
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-mesas.add(self);}]]></Code>
-								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[onOpen]]></Name>
@@ -57166,6 +57378,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57175,6 +57390,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57353,6 +57571,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57362,6 +57583,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57596,6 +57820,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -57605,6 +57832,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -57851,6 +58081,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -58097,6 +58330,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -58343,6 +58579,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -58590,7 +58829,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -58839,7 +59078,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -59088,7 +59327,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -59349,7 +59588,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -59529,6 +59768,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -59538,6 +59780,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -59716,6 +59961,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -59725,6 +59973,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -59903,6 +60154,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -59912,6 +60166,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -60090,6 +60347,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -60099,6 +60359,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -60277,6 +60540,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -60286,6 +60552,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -60464,6 +60733,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -60473,6 +60745,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -60651,6 +60926,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -60660,6 +60938,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -60838,6 +61119,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -60847,6 +61131,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61025,6 +61312,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61034,6 +61324,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61212,6 +61505,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61221,6 +61517,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61399,6 +61698,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61408,6 +61710,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61586,6 +61891,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61595,6 +61903,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61773,6 +62084,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61782,6 +62096,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -61960,6 +62277,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -61969,6 +62289,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -62147,6 +62470,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -62156,6 +62482,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -62334,6 +62663,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -62343,6 +62675,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -62521,6 +62856,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -62530,6 +62868,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -62708,6 +63049,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -62717,6 +63061,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -62895,6 +63242,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -62904,6 +63254,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -63082,6 +63435,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -63091,6 +63447,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -63269,6 +63628,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -63278,6 +63640,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -63525,7 +63890,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -63774,7 +64139,7 @@ mesas.add(self);}]]></Code>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
 								<Value Class="CodeValue">
-									<Code><![CDATA[4]]></Code>
+									<Code><![CDATA[2]]></Code>
 								</Value>
 							</Parameter>
 							<Parameter>
@@ -63954,6 +64319,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -63963,6 +64331,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -64141,6 +64512,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -64150,6 +64524,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -64328,6 +64705,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -64337,6 +64717,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -64515,6 +64898,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -64524,6 +64910,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -64702,6 +65091,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -64711,6 +65103,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -64889,6 +65284,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -64898,6 +65296,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -65076,6 +65477,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -65085,6 +65489,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -65263,6 +65670,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -65272,6 +65682,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -65450,6 +65863,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -65459,6 +65875,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -65637,6 +66056,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -65646,6 +66068,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -65824,6 +66249,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -65833,6 +66261,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -66011,6 +66442,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -66020,6 +66454,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
@@ -66198,6 +66635,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestricted]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[true]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[accessRestrictionType]]></Name>
@@ -66207,6 +66647,9 @@ mesas.add(self);}]]></Code>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[capacity]]></Name>
+								<Value Class="CodeValue">
+									<Code><![CDATA[2]]></Code>
+								</Value>
 							</Parameter>
 							<Parameter>
 								<Name><![CDATA[throughput]]></Name>
