@@ -180,30 +180,6 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1697065789407</Id>
-					<Name><![CDATA[mesa45]]></Name>
-					<X>1060</X><Y>640</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
-					<Id>1697065797842</Id>
-					<Name><![CDATA[mesa46]]></Name>
-					<X>1230</X><Y>640</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[int]]></Type>        
-					</Properties>
-				</Variable>
 				<Variable Class="Parameter">
 					<Id>1695213406989</Id>
 					<Name><![CDATA[tiempoPromedioRetirarPedidos]]></Name>
@@ -7596,10 +7572,6 @@ else {ped.myTable = mesas93;}]]></Code>
 								<Code><![CDATA[ped.sit=true;
 cantPersonasComiendo.add(ped);
 PersonasComiendo += 1;
-if (mesas45.agents().size() == 2){
-mesa45 = mesas45.agents().size();
-}
-mesa46 = mesas46.agents().size();
 if (ped.getTable().agents().size() == 2){
 	MesasDisponibles -= 1;
 	MesasOcupadas += 1;
@@ -7612,17 +7584,18 @@ if (ped.getTable().agents().size() == 2){
 							<Name><![CDATA[onAtExit]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[ped.sit=false;
-]]></Code>
+if (ped.getTable().agents().size() == 2){
+	mesas.add(ped.getTable());
+	mesasOcupadasCol.remove(ped.getTable());
+	MesasDisponibles += 1;
+	MesasOcupadas -= 1;
+}]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[mesas.add(ped.getTable());
-mesasOcupadasCol.remove(ped.getTable());
-MesasDisponibles += 1;
-MesasOcupadas -= 1;
-cantPersonasComiendo.remove(ped);
+								<Code><![CDATA[cantPersonasComiendo.remove(ped);
 PersonasComiendo -= 1;
 ped.myTable = null;]]></Code>
 							</Value>
@@ -9572,7 +9545,7 @@ else {ped.myTable = mesas93;}]]></Code>
 						<Parameter>
 							<Name><![CDATA[onEndService]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if(!mesas.isEmpty()){
+								<Code><![CDATA[if(mesas.size() > 0){
 	ped.choiceTable(mesas);
 }
 else {ped.myTable = mesas93;}]]></Code>
