@@ -109,21 +109,9 @@
 			<ConnectionsId>1692303567313</ConnectionsId>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1696278583188</Id>
-					<Name><![CDATA[PersonasComiendo]]></Name>
-					<X>1060</X><Y>330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
-					</Properties>
-				</Variable>
-				<Variable Class="PlainVariable">
 					<Id>1696278624515</Id>
 					<Name><![CDATA[MesasOcupadas]]></Name>
-					<X>1310</X><Y>330</Y>
+					<X>1070</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -138,7 +126,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1696278638009</Id>
 					<Name><![CDATA[MesasDisponibles]]></Name>
-					<X>1310</X><Y>380</Y>
+					<X>1210</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -153,7 +141,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1696278745060</Id>
 					<Name><![CDATA[TotalPersonas]]></Name>
-					<X>1310</X><Y>470</Y>
+					<X>1290</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -168,7 +156,7 @@
 				<Variable Class="PlainVariable">
 					<Id>1696284922270</Id>
 					<Name><![CDATA[cantidadDeGenteEsperandoPedido]]></Name>
-					<X>1060</X><Y>390</Y>
+					<X>1070</X><Y>300</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -181,55 +169,9 @@
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
-					<Id>1695213406989</Id>
-					<Name><![CDATA[tiempoPromedioRetirarPedidos]]></Name>
-					<X>880</X><Y>1330</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="DYNAMIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<UnitOfValue Class="TimeUnits"><![CDATA[MINUTE]]></UnitOfValue>
-						<SdArray>false</SdArray>
-						<ParameterEditor>
-							<Id>1695213406987</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
-					<Id>1695213438855</Id>
-					<Name><![CDATA[tiempoPromedioEnSistema]]></Name>
-					<X>880</X><Y>1370</Y>
-					<Label><X>10</X><Y>5</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
-						<Type><![CDATA[double]]></Type>
-						<UnitType><![CDATA[NONE]]></UnitType>
-						<SdArray>false</SdArray>
-						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0]]></Code>
-						</DefaultValue>
-						<ParameterEditor>
-							<Id>1695213438853</Id>
-							<EditorContolType>TEXT_BOX</EditorContolType>
-							<MinSliderValue><![CDATA[0]]></MinSliderValue>
-							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
-							<DelimeterType>NO_DELIMETER</DelimeterType>
-						</ParameterEditor>
-					</Properties>                 
-				</Variable>
-				<Variable Class="Parameter">
 					<Id>1697026135444</Id>
 					<Name><![CDATA[genteQueQuedoSinMesa]]></Name>
-					<X>1060</X><Y>520</Y>
+					<X>1070</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -253,7 +195,7 @@
 				<Variable Class="CollectionVariable">
 					<Id>1693515892989</Id>
 					<Name><![CDATA[mesas]]></Name>
-					<X>1310</X><Y>530</Y>
+					<X>1290</X><Y>350</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -265,21 +207,6 @@
 						<CollectionInitializer Class="CodeValue">
 							<Code><![CDATA[{ mesas1, mesas2, mesas3, mesas4, mesas5, mesas6, mesas7, mesas8, mesas9, mesas10, mesas11, mesas12, mesas13, mesas14, mesas15, mesas16, mesas17, mesas18, mesas19, mesas20, mesas21, mesas22, mesas23, mesas24, mesas25, mesas26, mesas27, mesas28, mesas29, mesas30, mesas31, mesas32, mesas33, mesas34, mesas35, mesas36, mesas37, mesas38, mesas39, mesas40, mesas41, mesas42, mesas43, mesas44, mesas45, mesas46, mesas47, mesas48, mesas49, mesas50, mesas51, mesas52, mesas53, mesas54, mesas55, mesas56, mesas57, mesas58, mesas59, mesas60, mesas61, mesas62, mesas63, mesas64, mesas65, mesas66, mesas67, mesas68, mesas69, mesas70, mesas71, mesas72, mesas73, mesas74, mesas75, mesas76, mesas77, mesas78, mesas79, mesas80, mesas81, mesas82, mesas83, mesas84, mesas85, mesas86, mesas87, mesas88, mesas89, mesas90, mesas91, mesas92 }]]></Code>
 						</CollectionInitializer>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1694174450753</Id>
-					<Name><![CDATA[cantPersonasComiendo]]></Name>
-					<X>1060</X><Y>450</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Persona]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
 				</Variable>
@@ -2416,40 +2343,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1697025814096</Id>
-					<Name><![CDATA[connector53]]></Name>
-					<X>620</X><Y>1030</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[patiodecomidas]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seSienta]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedSelectOutput]]></ClassName>
-						<ItemName><![CDATA[out1]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[patiodecomidas]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[tieneMesa]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedSelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>0</X><Y>-220</Y></Point>
-						<Point><X>20</X><Y>-220</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1697025974606</Id>
 					<Name><![CDATA[connector67]]></Name>
 					<X>750</X><Y>1010</Y>
@@ -2551,41 +2444,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1697026988411</Id>
-					<Name><![CDATA[connector47]]></Name>
-					<X>620</X><Y>1050</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[patiodecomidas]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seSienta]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedSelectOutput]]></ClassName>
-						<ItemName><![CDATA[out2]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[patiodecomidas]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[salida]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>540</X><Y>0</Y></Point>
-						<Point><X>540</X><Y>-210</Y></Point>
-						<Point><X>560</X><Y>-210</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1697027009316</Id>
 					<Name><![CDATA[connector70]]></Name>
 					<X>400</X><Y>1060</Y>
@@ -2606,7 +2464,7 @@
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[patiodecomidas]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[seSienta]]></ItemName>
+						<ItemName><![CDATA[tieneMesa]]></ItemName>
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
@@ -2618,6 +2476,9 @@
 						<Point><X>140</X><Y>0</Y></Point>
 						<Point><X>140</X><Y>-30</Y></Point>
 						<Point><X>200</X><Y>-30</Y></Point>
+						<Point><X>220</X><Y>-30</Y></Point>
+						<Point><X>220</X><Y>-250</Y></Point>
+						<Point><X>240</X><Y>-250</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -3108,9 +2969,6 @@
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[cantPersonasComiendo.remove(ped);]]></Code>
-							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3788,7 +3646,7 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[TotalPersonas++;]]></Code>
+								<Code><![CDATA[TotalPersonas--;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -4805,6 +4663,14 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onEndService]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[if(!mesas.isEmpty()){
+ped.choiceTable(mesas);
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
+else {ped.myTable = mesas93;}]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
@@ -5725,7 +5591,9 @@
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -5840,7 +5708,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -5955,7 +5825,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -6070,7 +5942,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -6721,7 +6595,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -6836,7 +6712,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -6951,7 +6829,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -7066,7 +6946,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -7430,7 +7312,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -7562,8 +7446,7 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Name><![CDATA[onBeginWait]]></Name>
 							<Value Class="CodeValue">
 								<Code><![CDATA[ped.sit=true;
-cantPersonasComiendo.add(ped);
-PersonasComiendo++;]]></Code>
+]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7576,11 +7459,10 @@ PersonasComiendo++;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[if (ped.myTable != mesas93)
-{mesas.add(ped.getTable());}
+								<Code><![CDATA[mesas.add(ped.getTable());
 ped.myTable = null;
-cantPersonasComiendo.remove(ped);
-PersonasComiendo--;]]></Code>
+MesasOcupadas--;
+MesasDisponibles++;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -7896,7 +7778,7 @@ PersonasComiendo--;]]></Code>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[TotalPersonas++;]]></Code>
+								<Code><![CDATA[TotalPersonas--;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -9078,145 +8960,6 @@ PersonasComiendo--;]]></Code>
 					</QuantityColumn>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1697026895142</Id>
-					<Name><![CDATA[seSienta]]></Name>
-					<X>590</X><Y>1030</Y>
-					<Label><X>35</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedSelectOutput]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-							<ClassName><![CDATA[PedSelectOutput]]></ClassName>
-							<ItemName><![CDATA[1412464601215]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[type]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition1]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition2]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition3]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[condition4]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability1]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[0.5]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability2]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[0.5]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability3]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[0
-]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability4]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[0]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability5]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[0]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[exitNumber]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit1]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[if(!mesas.isEmpty()){
-ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
-else {ped.myTable = mesas93;}]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit2]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit3]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit4]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit5]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1697027227884</Id>
 					<Name><![CDATA[cocinaOautoservicio]]></Name>
 					<X>90</X><Y>790</Y>
@@ -9289,12 +9032,6 @@ else {ped.myTable = mesas93;}]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit1]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[if(!mesas.isEmpty()){
-ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
-else {ped.myTable = mesas93;}]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit2]]></Name>
@@ -9377,13 +9114,13 @@ else {ped.myTable = mesas93;}]]></Code>
 						<Parameter>
 							<Name><![CDATA[condition1]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[(ped.myTable != mesas93)]]></Code>
+								<Code><![CDATA[(ped.getTable() != mesas93)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[condition2]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[(ped.myTable == mesas93)]]></Code>
+								<Code><![CDATA[(ped.getTable() == mesas93)]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -9539,7 +9276,9 @@ else {ped.myTable = mesas93;}]]></Code>
 							<Value Class="CodeValue">
 								<Code><![CDATA[if(!mesas.isEmpty()){
 ped.choiceTable(mesas);
-mesas.remove(ped.myTable);}
+mesas.remove(ped.getTable());
+MesasOcupadas++;
+MesasDisponibles--;}
 else {ped.myTable = mesas93;}]]></Code>
 							</Value>
 						</Parameter>
@@ -66480,7 +66219,7 @@ mesas.add(self);}]]></Code>
     			<Histogram>
 					<Id>1695215208081</Id>
 					<Name><![CDATA[chart]]></Name>
-					<X>610</X><Y>10</Y>
+					<X>700</X><Y>0</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -66544,7 +66283,7 @@ mesas.add(self);}]]></Code>
     			<Histogram>
 					<Id>1695216593612</Id>
 					<Name><![CDATA[PedidosPromedios]]></Name>
-					<X>700</X><Y>220</Y>
+					<X>690</X><Y>200</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -67427,6 +67166,71 @@ mesas.add(self);}]]></Code>
 					<Height>19</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
+    			<BarChart>
+					<Id>1697655610369</Id>
+					<Name><![CDATA[chart1]]></Name>
+					<X>1100</X><Y>-10</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1697702400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<DataItem>
+					<Id>1697655611982</Id>
+					<Expression><![CDATA[MesasOcupadas]]></Expression>
+					<Color>-256</Color>
+						<Title><![CDATA[Mesas Ocupadas]]></Title>
+					</DataItem>
+					<DataItem>
+					<Id>1697655617944</Id>
+					<Expression><![CDATA[MesasDisponibles]]></Expression>
+					<Color>-16776961</Color>
+						<Title><![CDATA[Mesas Disponibles]]></Title>
+					</DataItem>
+					<ScaleFromExpression><![CDATA[0]]></ScaleFromExpression>
+					<ScaleToExpression><![CDATA[1]]></ScaleToExpression>
+					<ScaleType>AUTO</ScaleType>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+    			</BarChart>
 			</Presentation>
 
 				</Level>
@@ -68323,12 +68127,6 @@ return myTable;]]></Body>
 			</Presentation>
 
 			<Parameters>			
-				<Parameter>
-					<ParameterName><![CDATA[tiempoPromedioRetirarPedidos]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[tiempoPromedioEnSistema]]></ParameterName>
-				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[genteQueQuedoSinMesa]]></ParameterName>
 				</Parameter>
