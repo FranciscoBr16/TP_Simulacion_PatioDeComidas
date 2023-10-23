@@ -2731,7 +2731,7 @@
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[TotalPersonas += 1;]]></Code>
+								<Code><![CDATA[TotalPersonas++;]]></Code>
 							</Value>
 						</Parameter>
 						<Parameter>
@@ -3490,9 +3490,6 @@
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[TotalPersonas--;]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
@@ -7161,9 +7158,6 @@ MesasDisponibles++;]]></Code>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[TotalPersonas--;]]></Code>
-							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onCancel]]></Name>
@@ -67766,7 +67760,8 @@ cor9[in]=root.timeBillyEnd.distribution.mean();
 corridasBilly.add(root.timeBillyEnd.distribution.mean());
 cor10[in]=root.tiempoEnSistemaEnd.distribution.mean();
 tiemposistema.add(root.tiempoEnSistemaEnd.distribution.mean());
-gentesinmesa[in]=root.genteQueQuedoSinMesa;
+gentesinmesa[in]=root.genteQueQuedoSinMesa / root.TotalPersonas;
+personasxCorrida[in] = root.TotalPersonas;
 in++;]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -67957,6 +67952,21 @@ in++;]]></AfterSimulationRunCode>
 					<Id>1697760292799</Id>
 					<Name><![CDATA[gentesinmesa]]></Name>
 					<X>160</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int[]]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[new int[100]]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1697826474112</Id>
+					<Name><![CDATA[personasxCorrida]]></Name>
+					<X>160</X><Y>450</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
