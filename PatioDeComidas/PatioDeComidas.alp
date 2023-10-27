@@ -2141,7 +2141,7 @@
 				<Connector>
 					<Id>1697025974606</Id>
 					<Name><![CDATA[connector67]]></Name>
-					<X>750</X><Y>1010</Y>
+					<X>760</X><Y>1010</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2168,9 +2168,9 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>350</X><Y>0</Y></Point>
-						<Point><X>350</X><Y>-170</Y></Point>
-						<Point><X>430</X><Y>-170</Y></Point>
+						<Point><X>340</X><Y>0</Y></Point>
+						<Point><X>340</X><Y>-170</Y></Point>
+						<Point><X>420</X><Y>-170</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2380,7 +2380,7 @@
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>20</X><Y>0</Y></Point>
 						<Point><X>20</X><Y>180</Y></Point>
-						<Point><X>50</X><Y>180</Y></Point>
+						<Point><X>60</X><Y>180</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -2488,17 +2488,17 @@
 				</Connector>
 			</Connectors>
 			<AnalysisData>
-    			<DataSet>
-					<Id>1697749811614</Id>
-					<Name><![CDATA[MesasDisponiblesDS]]></Name>
-					<X>1380</X><Y>250</Y>
-					<Label><X>20</X><Y>-5</Y></Label>
+    			<Statistics>
+					<Id>1698232150559</Id>
+					<Name><![CDATA[mesasTiempo]]></Name>
+					<X>1390</X><Y>250</Y>
+					<Label><X>15</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<AutoUpdate>true</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
-					<OccurrenceDate>1697788800000</OccurrenceDate>
+					<OccurrenceDate>1698307200000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
 						<Code><![CDATA[0]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -2507,10 +2507,9 @@
 						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 					</RecurrenceCode>
-					<FreezeXAxis>true</FreezeXAxis>
-					<VerticalAxisExpression><![CDATA[MesasDisponibles]]></VerticalAxisExpression>
-					<SamplesToKeep>1000</SamplesToKeep>
-				</DataSet>
+					<Discrete>false</Discrete>
+					<ValueCode><![CDATA[MesasDisponibles]]></ValueCode>
+				</Statistics>
 			</AnalysisData>
 			<AgentLinks>
 				<AgentLink>
@@ -8207,7 +8206,7 @@ MesasDisponibles++;]]></Code>
 				<EmbeddedObject>
 					<Id>1697025906386</Id>
 					<Name><![CDATA[pedWaitSinMesa]]></Name>
-					<X>710</X><Y>1000</Y>
+					<X>720</X><Y>1000</Y>
 					<Label><X>-15</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -67738,31 +67737,33 @@ return myTable;]]></Body>
 			<MaximumMemory>8192</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
-			<AfterSimulationRunCode><![CDATA[cor[in]=root.timeMCEnd.distribution.mean();
-corridasMac.add(root.timeMCEnd.distribution.mean());
-cor1[in]=root.timeBurgerEnd.distribution.mean();
+			<AfterSimulationRunCode><![CDATA[corridasMac.add(root.timeMCEnd.distribution.mean());
 corridasBurger.add(root.timeBurgerEnd.distribution.mean());
-cor2[in]=root.timeKFCEnd.distribution.mean();
 corridasKFC.add(root.timeKFCEnd.distribution.mean());
-cor3[in]=root.timeMostazaEnd.distribution.mean();
 corridasMostaza.add(root.timeMostazaEnd.distribution.mean());
-cor4[in]=root.timeGreenEnd.distribution.mean();
 corridasGreenEat.add(root.timeGreenEnd.distribution.mean());
-cor5[in]=root.timeSbarroEnd.distribution.mean();
 corridasSbarro.add(root.timeSbarroEnd.distribution.mean());
-cor6[in]=root.timeDandyEnd.distribution.mean();
 corridasDandy.add(root.timeDandyEnd.distribution.mean());
-cor7[in]=root.timeCDMEnd.distribution.mean();
 corridasCDM.add(root.timeCDMEnd.distribution.mean());
-cor8[in]=root.timeHeladoEnd.distribution.mean();
 corridasHelado.add(root.timeHeladoEnd.distribution.mean());
-cor9[in]=root.timeBillyEnd.distribution.mean();
 corridasBilly.add(root.timeBillyEnd.distribution.mean());
-cor10[in]=root.tiempoEnSistemaEnd.distribution.mean();
 tiemposistema.add(root.tiempoEnSistemaEnd.distribution.mean());
-gentesinmesa[in]=root.genteQueQuedoSinMesa / root.TotalPersonas;
+gentesinmesa[in]=root.genteQueQuedoSinMesa;
 personasxCorrida[in] = root.TotalPersonas;
-in++;]]></AfterSimulationRunCode>
+in++;
+pack.setCellValue(corridasMac.get(in-1), 1, in+1, 1);
+pack.setCellValue(corridasKFC.get(in-1), 1, in+1, 2);
+pack.setCellValue(corridasBurger.get(in-1), 1, in+1, 3);
+pack.setCellValue(corridasMostaza.get(in-1), 1, in+1, 4);
+pack.setCellValue(corridasCDM.get(in-1), 1, in+1, 5);
+pack.setCellValue(corridasSbarro.get(in-1), 1, in+1, 6);
+pack.setCellValue(corridasGreenEat.get(in-1), 1, in+1, 7);
+pack.setCellValue(corridasBilly.get(in-1), 1, in+1, 8);
+pack.setCellValue(corridasDandy.get(in-1), 1, in+1, 9);
+pack.setCellValue(root.tiempoEnSistemaEnd.distribution.mean(), 1, in+1, 10);
+pack.setCellValue(root.TotalPersonas, 1, in+1, 11);
+pack.setCellValue(root.genteQueQuedoSinMesa, 1, in+1, 12);
+pack.setCellValue(root.mesasTiempo.mean() , 1, in+1, 13);]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
@@ -67988,7 +67989,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68003,7 +68004,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68018,7 +68019,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68033,7 +68034,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68048,7 +68049,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68063,7 +68064,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68078,7 +68079,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68093,7 +68094,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68108,7 +68109,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68123,7 +68124,7 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
@@ -68138,12 +68139,30 @@ in++;]]></AfterSimulationRunCode>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
 						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Object]]></ElementClass>
+						<ElementClass><![CDATA[Double]]></ElementClass>
 						<ValueElementClass><![CDATA[String]]></ValueElementClass>
 					</Properties>
 
 				</Variable>
 			</Variables>
+			<Connectivity>
+				<ExcelFile>
+					<Id>1698231839926</Id>
+					<Name><![CDATA[pack]]></Name>
+					<X>340</X><Y>410</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ResourceReference>
+						<PackageName><![CDATA[patiodecomidas]]></PackageName>
+						<ClassName><![CDATA[C:/Users/bebof/Desktop/esc1.xlsx]]></ClassName>
+					</ResourceReference>
+					<SaveInSnapshot>false</SaveInSnapshot>
+					<LoadOnStartup>true</LoadOnStartup>
+					<SaveOnDispose>true</SaveOnDispose>
+				</ExcelFile>
+			</Connectivity>
 
 			<Presentation>
 				<Text>
@@ -68405,7 +68424,7 @@ in++;]]></AfterSimulationRunCode>
 			<ReplicationsProperties>
 				<UseReplication>true</UseReplication>
 				<FixedReplicationsNumber>true</FixedReplicationsNumber>
-				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<ReplicationPerIteration>50</ReplicationPerIteration>
 				<MinimumReplication>2</MinimumReplication>
 				<MaximumReplication>10</MaximumReplication>
 				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
@@ -68493,6 +68512,10 @@ in++;]]></AfterSimulationRunCode>
 		</Resource>
 		<Resource>
 			<Path><![CDATA[cdm.jpg]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[C:/Users/bebof/Desktop/esc1.xlsx]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 		</Resource>
 	</ModelResources>
