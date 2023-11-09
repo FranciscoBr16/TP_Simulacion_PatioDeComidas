@@ -4,7 +4,7 @@
 	         AnyLogic Project File 
 *************************************************	         
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307181708" AlpVersion="8.8.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.8.4.202307181709" AlpVersion="8.8.2">
 <Model>
 	<Id>1692303567309</Id>
 	<Name><![CDATA[PatioDeComidas]]></Name>
@@ -5564,7 +5564,7 @@ else {ped.myTable = mesas93;}]]></Code>
 						<Parameter>
 							<Name><![CDATA[delayTime]]></Name>
 							<Value Class="CodeUnitValue">
-								<Code><![CDATA[uniform(0.2, 0.8)]]></Code>
+								<Code><![CDATA[uniform(0.2, 1.2)]]></Code>
 								<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 							</Value>
 						</Parameter>
@@ -68671,8 +68671,8 @@ corridasHelado.add(root.timeHeladoEnd.distribution.mean());
 corridasBilly.add(root.timeBillyEnd.distribution.mean());
 
 tiemposistema.add(root.tiempoEnSistemaEnd.distribution.mean());
-gentesinmesa[in]=root.totalGenteSinMesa;
-personasxCorrida[in] = root.TotalPersonas;
+
+
 in++;
 pack.setCellValue(corridasMac.get(in-1), 1, in+1, 1);
 pack.setCellValue(corridasKFC.get(in-1), 1, in+1, 2);
